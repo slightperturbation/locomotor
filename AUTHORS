@@ -1,0 +1,9 @@
+The Locomotor Project.
+
+Primary author: Brian F. Allen (vector@acm.org)
+
+Locomotor relies on other software, including:
+ODE, originally written by Russell Smith.
+NEAT, originally written by Ken Stanley.
+PIXIE, written by Okan Arikan.
+

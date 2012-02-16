@@ -1,0 +1,75 @@
+
+
+
+Controller and ArticulatedBody are tightly linked, and their
+creation is intertwined.  To support this coupling, creation is
+handled by the EvalutionFactory.
+
+An evaluation bundles together all the components needed to
+evaluate a given genome.  (For now, we assume that each
+genome is to be independently evaluated, so co-evolution
+is not supported.)  Thus the Evaluation consists of:
+
+- ArticulatedBody
+- Controller
+- FitnessFunction, which is part of the PopulationFitness
+
+The ArticulatedBody requires a fixed-sized set of "inputs"
+that are used to calculate the torques applied for all the
+controlled degrees of freedom of the character.  There may
+be controlled degrees of freedom that do not directly map
+to inputs, but it's better if this set is small-- calculation
+of the control should take place in the controller.
+
+However, ArticulatedBody control inputs are in the range (0,1),
+and so must be mapped to appropriate torques, this is one
+of the key responsibilities of the ArticulatedBody class.
+
+In addition, the simulated body generally has a set of sensors
+capable of quantifying the state of the body.  These sensors
+are scaled to (0,1) and provided as the ArticulatedBody's
+outputs.
+
+The Controller is a consumer of the ArticulatedBody's outputs,
+and a provider for its inputs.  Controllers may use one or
+more evolved neural networks.  In general, all of a Controller's
+neural networks will be built based on the single genome used
+to create the controller.  If co-evolution is needed, a different
+Evaluation subclass would be needed, and it would pass multiple
+genomes to the controller (or one to build the controller, and
+another to build the articulated body).
+
+
+Generally, the data flow is:
+
+ABout -> controlIn -> Controller.evaluate() -> controlOut -> ABin
+
+
+Creation.
+
+Generally, the main program creates an Evolver (e.g., NeatEvolver).
+
+Usage:
+  NeatEvolver->go()
+    NeatEvolver->singleRun()
+      for every gen
+        evaluatePopulation()
+          for every genome
+            new Evaluation( )
+            evaluation()
+        myPop->epoch()
+
+  runIndividualGenome( FitnessFuncPtr, PhysicsSimulatorPtr, argUseHarness )
+
+Controller Factories
+-- 
+ - use ab to get controller IO counts
+
+
+
+
+------------------------------------------------
+TODO-
+- What should Crossover inputs/outputs do for symmetry > 2?
+- ArticulatedBody should be owned by evaluation, not sim
+-

@@ -1,0 +1,1297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		D6DFCF3E104A9845003AA9C7 /* Batch */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D6DFCF41104A9865003AA9C7 /* Build configuration list for PBXAggregateTarget "Batch" */;
+			buildPhases = (
+			);
+			dependencies = (
+				D6DFCF43104A9877003AA9C7 /* PBXTargetDependency */,
+				D6DFCF45104A987D003AA9C7 /* PBXTargetDependency */,
+			);
+			name = Batch;
+			productName = Batch;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		8DD76F6A0486A84900D96B5E /* else.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* else.1 */; };
+		D619E92A0FEF0F3B00AD1ED1 /* ArticulatedBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9070FEF0F3B00AD1ED1 /* ArticulatedBody.cpp */; };
+		D619E92B0FEF0F3B00AD1ED1 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E90C0FEF0F3B00AD1ED1 /* Controller.cpp */; };
+		D619E92C0FEF0F3B00AD1ED1 /* EvolverCmdLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9120FEF0F3B00AD1ED1 /* EvolverCmdLine.cpp */; };
+		D619E92D0FEF0F3B00AD1ED1 /* NeatEvolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9190FEF0F3B00AD1ED1 /* NeatEvolver.cpp */; };
+		D619E92E0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91B0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp */; };
+		D619E92F0FEF0F3B00AD1ED1 /* RibRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91F0FEF0F3B00AD1ED1 /* RibRenderer.cpp */; };
+		D619E9300FEF0F3B00AD1ED1 /* Tardis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9240FEF0F3B00AD1ED1 /* Tardis.cpp */; };
+		D619E9310FEF0F3B00AD1ED1 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9260FEF0F3B00AD1ED1 /* Utils.cpp */; };
+		D619E93F0FEF0F7D00AD1ED1 /* genetics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9370FEF0F7D00AD1ED1 /* genetics.cpp */; };
+		D619E9400FEF0F7D00AD1ED1 /* neatmain_ng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E93A0FEF0F7D00AD1ED1 /* neatmain_ng.cpp */; };
+		D619E9410FEF0F7D00AD1ED1 /* networks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E93C0FEF0F7D00AD1ED1 /* networks.cpp */; };
+		D633CC8A10163D9200B99A82 /* FileEvoReporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D633CC8910163D9200B99A82 /* FileEvoReporter.cpp */; };
+		D633CD1610166D6600B99A82 /* MySqlDBEvoReporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D633CD1510166D6600B99A82 /* MySqlDBEvoReporter.cpp */; };
+		D647A51E1087130900B469F9 /* StrategyFitnessFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D647A51D1087130900B469F9 /* StrategyFitnessFunc.cpp */; };
+		D647A51F1087130900B469F9 /* StrategyFitnessFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D647A51D1087130900B469F9 /* StrategyFitnessFunc.cpp */; };
+		D647A5F2108A53F800B469F9 /* FitnessFuncFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D647A5F1108A53F800B469F9 /* FitnessFuncFactory.cpp */; };
+		D647A5F3108A53F800B469F9 /* FitnessFuncFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D647A5F1108A53F800B469F9 /* FitnessFuncFactory.cpp */; };
+		D647A6FB108A83F600B469F9 /* PopulationFitness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D647A6FA108A83F600B469F9 /* PopulationFitness.cpp */; };
+		D647A6FC108A83F600B469F9 /* PopulationFitness.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D647A6FA108A83F600B469F9 /* PopulationFitness.cpp */; };
+		D649B2AC1023822A00223854 /* ParamsFromDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D649B2AB1023822A00223854 /* ParamsFromDB.cpp */; };
+		D657BC1B106BF4CF003E7257 /* DBExperiment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D657BC1A106BF4CF003E7257 /* DBExperiment.cpp */; };
+		D666BF21108A9EEF00BB931A /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549421062FF0400DB16A3 /* libjpeg.a */; };
+		D666BF22108A9EEF00BB931A /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5498E1063008200DB16A3 /* libmysqlclient.a */; };
+		D666BF23108A9EEF00BB931A /* libode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549431062FF0400DB16A3 /* libode.a */; };
+		D666BF24108A9EEF00BB931A /* libpixiecommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549441062FF0400DB16A3 /* libpixiecommon.a */; };
+		D666BF25108A9EEF00BB931A /* libri.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549451062FF0400DB16A3 /* libri.a */; };
+		D666BF26108A9EEF00BB931A /* libsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549461062FF0400DB16A3 /* libsdr.a */; };
+		D666BF27108A9EEF00BB931A /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549471062FF0400DB16A3 /* libtiff.a */; };
+		D666BF2C108A9F3900BB931A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549BD106300FB00DB16A3 /* Cocoa.framework */; };
+		D66A5B640FFEF96A006E8627 /* ArticulatedBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9070FEF0F3B00AD1ED1 /* ArticulatedBody.cpp */; };
+		D66A5B650FFEF96A006E8627 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E90C0FEF0F3B00AD1ED1 /* Controller.cpp */; };
+		D66A5B670FFEF96A006E8627 /* NeatEvolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9190FEF0F3B00AD1ED1 /* NeatEvolver.cpp */; };
+		D66A5B680FFEF96A006E8627 /* PhysicsSimulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91B0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp */; };
+		D66A5B690FFEF96A006E8627 /* RibRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91F0FEF0F3B00AD1ED1 /* RibRenderer.cpp */; };
+		D66A5B6A0FFEF96A006E8627 /* Tardis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9240FEF0F3B00AD1ED1 /* Tardis.cpp */; };
+		D66A5B6B0FFEF96A006E8627 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9260FEF0F3B00AD1ED1 /* Utils.cpp */; };
+		D66A5B6C0FFEF96A006E8627 /* networks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E93C0FEF0F7D00AD1ED1 /* networks.cpp */; };
+		D66A5B6D0FFEF96A006E8627 /* genetics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9370FEF0F7D00AD1ED1 /* genetics.cpp */; };
+		D66A5B6E0FFEF96A006E8627 /* neatmain_ng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E93A0FEF0F7D00AD1ED1 /* neatmain_ng.cpp */; };
+		D66A5B710FFEF96A006E8627 /* else.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* else.1 */; };
+		D66A5B7A0FFEF9B2006E8627 /* mainStateToRIB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D66A5B790FFEF9B2006E8627 /* mainStateToRIB.cpp */; };
+		D66C138D1014EBA800F237DA /* ArticulatedBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9070FEF0F3B00AD1ED1 /* ArticulatedBody.cpp */; };
+		D66C138E1014EBA800F237DA /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E90C0FEF0F3B00AD1ED1 /* Controller.cpp */; };
+		D66C138F1014EBA800F237DA /* NeatEvolver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9190FEF0F3B00AD1ED1 /* NeatEvolver.cpp */; };
+		D66C13901014EBA800F237DA /* PhysicsSimulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91B0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp */; };
+		D66C13911014EBA800F237DA /* RibRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91F0FEF0F3B00AD1ED1 /* RibRenderer.cpp */; };
+		D66C13921014EBA800F237DA /* Tardis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9240FEF0F3B00AD1ED1 /* Tardis.cpp */; };
+		D66C13931014EBA800F237DA /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9260FEF0F3B00AD1ED1 /* Utils.cpp */; };
+		D66C13941014EBA800F237DA /* networks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E93C0FEF0F7D00AD1ED1 /* networks.cpp */; };
+		D66C13951014EBA800F237DA /* genetics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9370FEF0F7D00AD1ED1 /* genetics.cpp */; };
+		D66C13961014EBA800F237DA /* neatmain_ng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E93A0FEF0F7D00AD1ED1 /* neatmain_ng.cpp */; };
+		D66C13971014EBA800F237DA /* EvolverDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D66C13811014E93D00F237DA /* EvolverDB.cpp */; };
+		D66C981F102D811900271F6C /* BodyState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6EF7B94102BCFE10038ED41 /* BodyState.cpp */; };
+		D6B5494E1062FF0400DB16A3 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549421062FF0400DB16A3 /* libjpeg.a */; };
+		D6B5494F1062FF0400DB16A3 /* libode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549431062FF0400DB16A3 /* libode.a */; };
+		D6B549501062FF0400DB16A3 /* libpixiecommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549441062FF0400DB16A3 /* libpixiecommon.a */; };
+		D6B549511062FF0400DB16A3 /* libri.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549451062FF0400DB16A3 /* libri.a */; };
+		D6B549521062FF0400DB16A3 /* libsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549461062FF0400DB16A3 /* libsdr.a */; };
+		D6B549531062FF0400DB16A3 /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549471062FF0400DB16A3 /* libtiff.a */; };
+		D6B549541062FF0400DB16A3 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549421062FF0400DB16A3 /* libjpeg.a */; };
+		D6B549551062FF0400DB16A3 /* libode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549431062FF0400DB16A3 /* libode.a */; };
+		D6B549561062FF0400DB16A3 /* libpixiecommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549441062FF0400DB16A3 /* libpixiecommon.a */; };
+		D6B549571062FF0400DB16A3 /* libri.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549451062FF0400DB16A3 /* libri.a */; };
+		D6B549581062FF0400DB16A3 /* libsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549461062FF0400DB16A3 /* libsdr.a */; };
+		D6B549591062FF0400DB16A3 /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549471062FF0400DB16A3 /* libtiff.a */; };
+		D6B5495A1062FF0400DB16A3 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549421062FF0400DB16A3 /* libjpeg.a */; };
+		D6B5495B1062FF0400DB16A3 /* libode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549431062FF0400DB16A3 /* libode.a */; };
+		D6B5495C1062FF0400DB16A3 /* libpixiecommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549441062FF0400DB16A3 /* libpixiecommon.a */; };
+		D6B5495D1062FF0400DB16A3 /* libri.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549451062FF0400DB16A3 /* libri.a */; };
+		D6B5495E1062FF0400DB16A3 /* libsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549461062FF0400DB16A3 /* libsdr.a */; };
+		D6B5495F1062FF0400DB16A3 /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549471062FF0400DB16A3 /* libtiff.a */; };
+		D6B549891063005300DB16A3 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549871063005300DB16A3 /* libmysqlclient.a */; };
+		D6B5498A1063005300DB16A3 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549871063005300DB16A3 /* libmysqlclient.a */; };
+		D6B5498B1063005300DB16A3 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549871063005300DB16A3 /* libmysqlclient.a */; };
+		D6B549A21063008200DB16A3 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5498D1063008200DB16A3 /* libjpeg.a */; };
+		D6B549A31063008200DB16A3 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5498E1063008200DB16A3 /* libmysqlclient.a */; };
+		D6B549A41063008200DB16A3 /* libode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5498F1063008200DB16A3 /* libode.a */; };
+		D6B549A51063008200DB16A3 /* libpixiecommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549901063008200DB16A3 /* libpixiecommon.a */; };
+		D6B549A61063008200DB16A3 /* libri.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549911063008200DB16A3 /* libri.a */; };
+		D6B549A71063008200DB16A3 /* libsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549921063008200DB16A3 /* libsdr.a */; };
+		D6B549A81063008200DB16A3 /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549931063008200DB16A3 /* libtiff.a */; };
+		D6B549A91063008200DB16A3 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5498D1063008200DB16A3 /* libjpeg.a */; };
+		D6B549AA1063008200DB16A3 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5498E1063008200DB16A3 /* libmysqlclient.a */; };
+		D6B549AB1063008200DB16A3 /* libode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B5498F1063008200DB16A3 /* libode.a */; };
+		D6B549AC1063008200DB16A3 /* libpixiecommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549901063008200DB16A3 /* libpixiecommon.a */; };
+		D6B549AD1063008200DB16A3 /* libri.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549911063008200DB16A3 /* libri.a */; };
+		D6B549AE1063008200DB16A3 /* libsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549921063008200DB16A3 /* libsdr.a */; };
+		D6B549AF1063008200DB16A3 /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549931063008200DB16A3 /* libtiff.a */; };
+		D6B549BE106300FB00DB16A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549BD106300FB00DB16A3 /* Cocoa.framework */; };
+		D6BE55061018ED1100E277C4 /* MySqlDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6BE55051018ED1100E277C4 /* MySqlDB.cpp */; };
+		D6BE552F1018EF7300E277C4 /* BilateralNeatController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6BE552E1018EF7300E277C4 /* BilateralNeatController.cpp */; };
+		D6BE55301018EF7300E277C4 /* BilateralNeatController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6BE552E1018EF7300E277C4 /* BilateralNeatController.cpp */; };
+		D6D87245106AD623003E48DE /* MySqlDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6BE55051018ED1100E277C4 /* MySqlDB.cpp */; };
+		D6D87248106AD62D003E48DE /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B549871063005300DB16A3 /* libmysqlclient.a */; };
+		D6D8724B106AD65A003E48DE /* queueDesignatorEvolves.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6D8724A106AD65A003E48DE /* queueDesignatorEvolves.cpp */; };
+		D6EF7B2F102BA66D0038ED41 /* dbPerformanceToRIB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6EF7B2E102BA66D0038ED41 /* dbPerformanceToRIB.cpp */; };
+		D6EF7B4C102BBA530038ED41 /* DbPerformance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6EF7B4B102BBA530038ED41 /* DbPerformance.cpp */; };
+		D6EF7B95102BCFE10038ED41 /* BodyState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6EF7B94102BCFE10038ED41 /* BodyState.cpp */; };
+		D6EF7B9E102BEC9C0038ED41 /* RibRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91F0FEF0F3B00AD1ED1 /* RibRenderer.cpp */; };
+		D6EF7B9F102BECA10038ED41 /* PhysicsSimulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E91B0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp */; };
+		D6EF7BA0102BECA50038ED41 /* ArticulatedBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9070FEF0F3B00AD1ED1 /* ArticulatedBody.cpp */; };
+		D6EF7BA2102BECB40038ED41 /* Tardis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9240FEF0F3B00AD1ED1 /* Tardis.cpp */; };
+		D6EF7BA3102BECB70038ED41 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E9260FEF0F3B00AD1ED1 /* Utils.cpp */; };
+		D6EF7BA4102BECBB0038ED41 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D619E90C0FEF0F3B00AD1ED1 /* Controller.cpp */; };
+		D6EF7BA6102BECD10038ED41 /* MySqlDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6BE55051018ED1100E277C4 /* MySqlDB.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6DFCF42104A9877003AA9C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D66C13871014EADF00F237DA;
+			remoteInfo = evolverDB;
+		};
+		D6DFCF44104A987D003AA9C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6EF7B26102BA5E40038ED41;
+			remoteInfo = dbPerformanceToRIB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F6A0486A84900D96B5E /* else.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		D66A5B700FFEF96A006E8627 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				D66A5B710FFEF96A006E8627 /* else.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8DD76F6C0486A84900D96B5E /* else */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = else; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6859E8B029090EE04C91782 /* else.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = else.1; sourceTree = "<group>"; };
+		D619E9060FEF0F3B00AD1ED1 /* All.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = All.hpp; path = src/All.hpp; sourceTree = "<group>"; };
+		D619E9070FEF0F3B00AD1ED1 /* ArticulatedBody.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArticulatedBody.cpp; path = src/ArticulatedBody.cpp; sourceTree = "<group>"; };
+		D619E9080FEF0F3B00AD1ED1 /* ArticulatedBody.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ArticulatedBody.hpp; path = src/ArticulatedBody.hpp; sourceTree = "<group>"; };
+		D619E9090FEF0F3B00AD1ED1 /* BalanceFitnessFunc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BalanceFitnessFunc.hpp; path = src/BalanceFitnessFunc.hpp; sourceTree = "<group>"; };
+		D619E90A0FEF0F3B00AD1ED1 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = src/config.h; sourceTree = "<group>"; };
+		D619E90B0FEF0F3B00AD1ED1 /* ConstantFitnessFunc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ConstantFitnessFunc.hpp; path = src/ConstantFitnessFunc.hpp; sourceTree = "<group>"; };
+		D619E90C0FEF0F3B00AD1ED1 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Controller.cpp; path = src/Controller.cpp; sourceTree = "<group>"; };
+		D619E90D0FEF0F3B00AD1ED1 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Controller.hpp; path = src/Controller.hpp; sourceTree = "<group>"; };
+		D619E90E0FEF0F3B00AD1ED1 /* Else.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Else.hpp; path = src/Else.hpp; sourceTree = "<group>"; };
+		D619E90F0FEF0F3B00AD1ED1 /* ElseException.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ElseException.hpp; path = src/ElseException.hpp; sourceTree = "<group>"; };
+		D619E9100FEF0F3B00AD1ED1 /* Evaluation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Evaluation.hpp; path = src/Evaluation.hpp; sourceTree = "<group>"; };
+		D619E9110FEF0F3B00AD1ED1 /* Evolver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Evolver.hpp; path = src/Evolver.hpp; sourceTree = "<group>"; };
+		D619E9120FEF0F3B00AD1ED1 /* EvolverCmdLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EvolverCmdLine.cpp; path = src/EvolverCmdLine.cpp; sourceTree = "<group>"; };
+		D619E9130FEF0F3B00AD1ED1 /* EvolverFactory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EvolverFactory.hpp; path = src/EvolverFactory.hpp; sourceTree = "<group>"; };
+		D619E9140FEF0F3B00AD1ED1 /* FitnessFunc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FitnessFunc.hpp; path = src/FitnessFunc.hpp; sourceTree = "<group>"; };
+		D619E9150FEF0F3B00AD1ED1 /* FitnessFuncFactory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FitnessFuncFactory.hpp; path = src/FitnessFuncFactory.hpp; sourceTree = "<group>"; };
+		D619E9160FEF0F3B00AD1ED1 /* Locatable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Locatable.hpp; path = src/Locatable.hpp; sourceTree = "<group>"; };
+		D619E9170FEF0F3B00AD1ED1 /* Math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Math.hpp; path = src/Math.hpp; sourceTree = "<group>"; };
+		D619E9180FEF0F3B00AD1ED1 /* BilateralNeatController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BilateralNeatController.hpp; path = src/BilateralNeatController.hpp; sourceTree = "<group>"; };
+		D619E9190FEF0F3B00AD1ED1 /* NeatEvolver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NeatEvolver.cpp; path = src/NeatEvolver.cpp; sourceTree = "<group>"; };
+		D619E91A0FEF0F3B00AD1ED1 /* NeatEvolver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NeatEvolver.hpp; path = src/NeatEvolver.hpp; sourceTree = "<group>"; };
+		D619E91B0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsSimulator.cpp; path = src/PhysicsSimulator.cpp; sourceTree = "<group>"; };
+		D619E91C0FEF0F3B00AD1ED1 /* PhysicsSimulator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PhysicsSimulator.hpp; path = src/PhysicsSimulator.hpp; sourceTree = "<group>"; };
+		D619E91D0FEF0F3B00AD1ED1 /* Renderable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Renderable.hpp; path = src/Renderable.hpp; sourceTree = "<group>"; };
+		D619E91E0FEF0F3B00AD1ED1 /* Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Renderer.hpp; path = src/Renderer.hpp; sourceTree = "<group>"; };
+		D619E91F0FEF0F3B00AD1ED1 /* RibRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RibRenderer.cpp; path = src/RibRenderer.cpp; sourceTree = "<group>"; };
+		D619E9200FEF0F3B00AD1ED1 /* RibRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RibRenderer.hpp; path = src/RibRenderer.hpp; sourceTree = "<group>"; };
+		D619E9210FEF0F3B00AD1ED1 /* Segment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Segment.hpp; path = src/Segment.hpp; sourceTree = "<group>"; };
+		D619E9220FEF0F3B00AD1ED1 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = src/Singleton.hpp; sourceTree = "<group>"; };
+		D619E9230FEF0F3B00AD1ED1 /* StepFitnessFunc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = StepFitnessFunc.hpp; path = src/StepFitnessFunc.hpp; sourceTree = "<group>"; };
+		D619E9240FEF0F3B00AD1ED1 /* Tardis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tardis.cpp; path = src/Tardis.cpp; sourceTree = "<group>"; };
+		D619E9250FEF0F3B00AD1ED1 /* Tardis.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Tardis.hpp; path = src/Tardis.hpp; sourceTree = "<group>"; };
+		D619E9260FEF0F3B00AD1ED1 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = src/Utils.cpp; sourceTree = "<group>"; };
+		D619E9270FEF0F3B00AD1ED1 /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = src/Utils.hpp; sourceTree = "<group>"; };
+		D619E9280FEF0F3B00AD1ED1 /* VelocityFitnessFunc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VelocityFitnessFunc.hpp; path = src/VelocityFitnessFunc.hpp; sourceTree = "<group>"; };
+		D619E9290FEF0F3B00AD1ED1 /* WalkFitnessFunc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = WalkFitnessFunc.hpp; path = src/WalkFitnessFunc.hpp; sourceTree = "<group>"; };
+		D619E9370FEF0F7D00AD1ED1 /* genetics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = genetics.cpp; path = src/neat/genetics.cpp; sourceTree = "<group>"; };
+		D619E9380FEF0F7D00AD1ED1 /* genetics.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = genetics.h; path = src/neat/genetics.h; sourceTree = "<group>"; };
+		D619E9390FEF0F7D00AD1ED1 /* neat.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = neat.h; path = src/neat/neat.h; sourceTree = "<group>"; };
+		D619E93A0FEF0F7D00AD1ED1 /* neatmain_ng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = neatmain_ng.cpp; path = src/neat/neatmain_ng.cpp; sourceTree = "<group>"; };
+		D619E93B0FEF0F7D00AD1ED1 /* neatmain_ng.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = neatmain_ng.h; path = src/neat/neatmain_ng.h; sourceTree = "<group>"; };
+		D619E93C0FEF0F7D00AD1ED1 /* networks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = networks.cpp; path = src/neat/networks.cpp; sourceTree = "<group>"; };
+		D619E93D0FEF0F7D00AD1ED1 /* networks.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = networks.h; path = src/neat/networks.h; sourceTree = "<group>"; };
+		D633CC0C101616C200B99A82 /* MySqlDB.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySqlDB.hpp; path = src/MySqlDB.hpp; sourceTree = "<group>"; };
+		D633CC8810163D9200B99A82 /* FileEvoReporter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FileEvoReporter.hpp; path = src/FileEvoReporter.hpp; sourceTree = "<group>"; };
+		D633CC8910163D9200B99A82 /* FileEvoReporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileEvoReporter.cpp; path = src/FileEvoReporter.cpp; sourceTree = "<group>"; };
+		D633CC8D10163EEE00B99A82 /* EvoReporter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EvoReporter.hpp; path = src/EvoReporter.hpp; sourceTree = "<group>"; };
+		D633CD1410166D6600B99A82 /* MySqlDBEvoReporter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySqlDBEvoReporter.hpp; path = src/MySqlDBEvoReporter.hpp; sourceTree = "<group>"; };
+		D633CD1510166D6600B99A82 /* MySqlDBEvoReporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySqlDBEvoReporter.cpp; path = src/MySqlDBEvoReporter.cpp; sourceTree = "<group>"; };
+		D647A51C1087130900B469F9 /* StrategyFitnessFunc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = StrategyFitnessFunc.hpp; path = src/StrategyFitnessFunc.hpp; sourceTree = "<group>"; };
+		D647A51D1087130900B469F9 /* StrategyFitnessFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StrategyFitnessFunc.cpp; path = src/StrategyFitnessFunc.cpp; sourceTree = "<group>"; };
+		D647A5F1108A53F800B469F9 /* FitnessFuncFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FitnessFuncFactory.cpp; path = src/FitnessFuncFactory.cpp; sourceTree = "<group>"; };
+		D647A6F9108A83D400B469F9 /* PopulationFitness.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PopulationFitness.hpp; path = src/PopulationFitness.hpp; sourceTree = "<group>"; };
+		D647A6FA108A83F600B469F9 /* PopulationFitness.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PopulationFitness.cpp; path = src/PopulationFitness.cpp; sourceTree = "<group>"; };
+		D649B2AA1023822A00223854 /* ParamsFromDB.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ParamsFromDB.hpp; path = src/ParamsFromDB.hpp; sourceTree = "<group>"; };
+		D649B2AB1023822A00223854 /* ParamsFromDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParamsFromDB.cpp; path = src/ParamsFromDB.cpp; sourceTree = "<group>"; };
+		D657BC19106BF4CF003E7257 /* DBExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBExperiment.h; path = src/DBExperiment.h; sourceTree = "<group>"; };
+		D657BC1A106BF4CF003E7257 /* DBExperiment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DBExperiment.cpp; path = src/DBExperiment.cpp; sourceTree = "<group>"; };
+		D66A5B750FFEF96A006E8627 /* stateToRIB */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stateToRIB; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66A5B780FFEF9B2006E8627 /* mainStateToRIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mainStateToRIB.h; path = src/mainStateToRIB.h; sourceTree = "<group>"; };
+		D66A5B790FFEF9B2006E8627 /* mainStateToRIB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mainStateToRIB.cpp; path = src/mainStateToRIB.cpp; sourceTree = "<group>"; };
+		D66C13811014E93D00F237DA /* EvolverDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EvolverDB.cpp; path = src/EvolverDB.cpp; sourceTree = "<group>"; };
+		D66C13881014EADF00F237DA /* evolverDB */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = evolverDB; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6B549351062FEE100DB16A3 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = ../locomotor/lib/libjpeg.a; sourceTree = SOURCE_ROOT; };
+		D6B549361062FEE100DB16A3 /* libode.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libode.a; path = ../locomotor/lib/libode.a; sourceTree = SOURCE_ROOT; };
+		D6B549371062FEE100DB16A3 /* libpixiecommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpixiecommon.a; path = ../locomotor/lib/libpixiecommon.a; sourceTree = SOURCE_ROOT; };
+		D6B549381062FEE100DB16A3 /* libri.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libri.a; path = ../locomotor/lib/libri.a; sourceTree = SOURCE_ROOT; };
+		D6B549391062FEE100DB16A3 /* libsdr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsdr.a; path = ../locomotor/lib/libsdr.a; sourceTree = SOURCE_ROOT; };
+		D6B5493A1062FEE100DB16A3 /* libtiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtiff.a; path = ../locomotor/lib/libtiff.a; sourceTree = SOURCE_ROOT; };
+		D6B549421062FF0400DB16A3 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		D6B549431062FF0400DB16A3 /* libode.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libode.a; sourceTree = "<group>"; };
+		D6B549441062FF0400DB16A3 /* libpixiecommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpixiecommon.a; sourceTree = "<group>"; };
+		D6B549451062FF0400DB16A3 /* libri.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libri.a; sourceTree = "<group>"; };
+		D6B549461062FF0400DB16A3 /* libsdr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsdr.a; sourceTree = "<group>"; };
+		D6B549471062FF0400DB16A3 /* libtiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtiff.a; sourceTree = "<group>"; };
+		D6B549871063005300DB16A3 /* libmysqlclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmysqlclient.a; path = ../locomotor/lib/libmysqlclient.a; sourceTree = SOURCE_ROOT; };
+		D6B5498D1063008200DB16A3 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		D6B5498E1063008200DB16A3 /* libmysqlclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmysqlclient.a; sourceTree = "<group>"; };
+		D6B5498F1063008200DB16A3 /* libode.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libode.a; sourceTree = "<group>"; };
+		D6B549901063008200DB16A3 /* libpixiecommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpixiecommon.a; sourceTree = "<group>"; };
+		D6B549911063008200DB16A3 /* libri.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libri.a; sourceTree = "<group>"; };
+		D6B549921063008200DB16A3 /* libsdr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsdr.a; sourceTree = "<group>"; };
+		D6B549931063008200DB16A3 /* libtiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtiff.a; sourceTree = "<group>"; };
+		D6B549BD106300FB00DB16A3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D6BE55051018ED1100E277C4 /* MySqlDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySqlDB.cpp; path = src/MySqlDB.cpp; sourceTree = "<group>"; };
+		D6BE552E1018EF7300E277C4 /* BilateralNeatController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BilateralNeatController.cpp; path = src/BilateralNeatController.cpp; sourceTree = "<group>"; };
+		D6D87240106AD4FF003E48DE /* queueDesignatorEvolves */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = queueDesignatorEvolves; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6D87249106AD65A003E48DE /* queueDesignatorEvolves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = queueDesignatorEvolves.h; path = src/queueDesignatorEvolves.h; sourceTree = "<group>"; };
+		D6D8724A106AD65A003E48DE /* queueDesignatorEvolves.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = queueDesignatorEvolves.cpp; path = src/queueDesignatorEvolves.cpp; sourceTree = "<group>"; };
+		D6E33F44100FBE5900907808 /* Else.xcclassmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcclassmodel; path = Else.xcclassmodel; sourceTree = "<group>"; };
+		D6EF7B27102BA5E40038ED41 /* dbPerformanceToRIB */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dbPerformanceToRIB; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6EF7B2D102BA66D0038ED41 /* dbPerformanceToRIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dbPerformanceToRIB.h; path = src/dbPerformanceToRIB.h; sourceTree = "<group>"; };
+		D6EF7B2E102BA66D0038ED41 /* dbPerformanceToRIB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dbPerformanceToRIB.cpp; path = src/dbPerformanceToRIB.cpp; sourceTree = "<group>"; };
+		D6EF7B4A102BBA530038ED41 /* DbPerformance.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DbPerformance.hpp; path = src/DbPerformance.hpp; sourceTree = "<group>"; };
+		D6EF7B4B102BBA530038ED41 /* DbPerformance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DbPerformance.cpp; path = src/DbPerformance.cpp; sourceTree = "<group>"; };
+		D6EF7B94102BCFE10038ED41 /* BodyState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BodyState.cpp; path = src/BodyState.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B5495A1062FF0400DB16A3 /* libjpeg.a in Frameworks */,
+				D6B5495B1062FF0400DB16A3 /* libode.a in Frameworks */,
+				D6B5495C1062FF0400DB16A3 /* libpixiecommon.a in Frameworks */,
+				D6B5495D1062FF0400DB16A3 /* libri.a in Frameworks */,
+				D6B5495E1062FF0400DB16A3 /* libsdr.a in Frameworks */,
+				D6B5495F1062FF0400DB16A3 /* libtiff.a in Frameworks */,
+				D6B5498B1063005300DB16A3 /* libmysqlclient.a in Frameworks */,
+				D6B549A91063008200DB16A3 /* libjpeg.a in Frameworks */,
+				D6B549AA1063008200DB16A3 /* libmysqlclient.a in Frameworks */,
+				D6B549AB1063008200DB16A3 /* libode.a in Frameworks */,
+				D6B549AC1063008200DB16A3 /* libpixiecommon.a in Frameworks */,
+				D6B549AD1063008200DB16A3 /* libri.a in Frameworks */,
+				D6B549AE1063008200DB16A3 /* libsdr.a in Frameworks */,
+				D6B549AF1063008200DB16A3 /* libtiff.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66A5B6F0FFEF96A006E8627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B549541062FF0400DB16A3 /* libjpeg.a in Frameworks */,
+				D6B549551062FF0400DB16A3 /* libode.a in Frameworks */,
+				D6B549561062FF0400DB16A3 /* libpixiecommon.a in Frameworks */,
+				D6B549571062FF0400DB16A3 /* libri.a in Frameworks */,
+				D6B549581062FF0400DB16A3 /* libsdr.a in Frameworks */,
+				D6B549591062FF0400DB16A3 /* libtiff.a in Frameworks */,
+				D6B5498A1063005300DB16A3 /* libmysqlclient.a in Frameworks */,
+				D6B549A21063008200DB16A3 /* libjpeg.a in Frameworks */,
+				D6B549A31063008200DB16A3 /* libmysqlclient.a in Frameworks */,
+				D6B549A41063008200DB16A3 /* libode.a in Frameworks */,
+				D6B549A51063008200DB16A3 /* libpixiecommon.a in Frameworks */,
+				D6B549A61063008200DB16A3 /* libri.a in Frameworks */,
+				D6B549A71063008200DB16A3 /* libsdr.a in Frameworks */,
+				D6B549A81063008200DB16A3 /* libtiff.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66C13861014EADF00F237DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B5494E1062FF0400DB16A3 /* libjpeg.a in Frameworks */,
+				D6B5494F1062FF0400DB16A3 /* libode.a in Frameworks */,
+				D6B549501062FF0400DB16A3 /* libpixiecommon.a in Frameworks */,
+				D6B549511062FF0400DB16A3 /* libri.a in Frameworks */,
+				D6B549521062FF0400DB16A3 /* libsdr.a in Frameworks */,
+				D6B549531062FF0400DB16A3 /* libtiff.a in Frameworks */,
+				D6B549891063005300DB16A3 /* libmysqlclient.a in Frameworks */,
+				D6B549BE106300FB00DB16A3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6D8723E106AD4FF003E48DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6D87248106AD62D003E48DE /* libmysqlclient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6EF7B25102BA5E40038ED41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D666BF21108A9EEF00BB931A /* libjpeg.a in Frameworks */,
+				D666BF22108A9EEF00BB931A /* libmysqlclient.a in Frameworks */,
+				D666BF23108A9EEF00BB931A /* libode.a in Frameworks */,
+				D666BF24108A9EEF00BB931A /* libpixiecommon.a in Frameworks */,
+				D666BF25108A9EEF00BB931A /* libri.a in Frameworks */,
+				D666BF26108A9EEF00BB931A /* libsdr.a in Frameworks */,
+				D666BF27108A9EEF00BB931A /* libtiff.a in Frameworks */,
+				D666BF2C108A9F3900BB931A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* else */ = {
+			isa = PBXGroup;
+			children = (
+				D6B5498C1063008200DB16A3 /* lib */,
+				D6B549871063005300DB16A3 /* libmysqlclient.a */,
+				D6B549411062FF0400DB16A3 /* lib */,
+				D6B549351062FEE100DB16A3 /* libjpeg.a */,
+				D6B549361062FEE100DB16A3 /* libode.a */,
+				D6B549371062FEE100DB16A3 /* libpixiecommon.a */,
+				D6B549381062FEE100DB16A3 /* libri.a */,
+				D6B549391062FEE100DB16A3 /* libsdr.a */,
+				D6B5493A1062FEE100DB16A3 /* libtiff.a */,
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				D66A5B780FFEF9B2006E8627 /* mainStateToRIB.h */,
+				D66A5B790FFEF9B2006E8627 /* mainStateToRIB.cpp */,
+				D6E33F44100FBE5900907808 /* Else.xcclassmodel */,
+				D6EF7B2D102BA66D0038ED41 /* dbPerformanceToRIB.h */,
+				D6EF7B2E102BA66D0038ED41 /* dbPerformanceToRIB.cpp */,
+				D6B549BD106300FB00DB16A3 /* Cocoa.framework */,
+				D6D87249106AD65A003E48DE /* queueDesignatorEvolves.h */,
+				D6D8724A106AD65A003E48DE /* queueDesignatorEvolves.cpp */,
+			);
+			name = else;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D6EF7B94102BCFE10038ED41 /* BodyState.cpp */,
+				D6BE550F1018EE2400E277C4 /* Main Files */,
+				D6BE550E1018EDFB00E277C4 /* Physics & Body */,
+				D6BE550D1018EDC100E277C4 /* Fitness */,
+				D6BE550A1018EDA000E277C4 /* Render */,
+				D6BE55091018ED7100E277C4 /* Util */,
+				D6BE55081018ED4A00E277C4 /* DB */,
+				D619E9320FEF0F4000AD1ED1 /* neat */,
+				D619E90C0FEF0F3B00AD1ED1 /* Controller.cpp */,
+				D619E90D0FEF0F3B00AD1ED1 /* Controller.hpp */,
+				D633CC8D10163EEE00B99A82 /* EvoReporter.hpp */,
+				D619E9100FEF0F3B00AD1ED1 /* Evaluation.hpp */,
+				D619E9110FEF0F3B00AD1ED1 /* Evolver.hpp */,
+				D619E9130FEF0F3B00AD1ED1 /* EvolverFactory.hpp */,
+				D619E9180FEF0F3B00AD1ED1 /* BilateralNeatController.hpp */,
+				D619E9190FEF0F3B00AD1ED1 /* NeatEvolver.cpp */,
+				D619E91A0FEF0F3B00AD1ED1 /* NeatEvolver.hpp */,
+				D6BE552E1018EF7300E277C4 /* BilateralNeatController.cpp */,
+				D6EF7B4A102BBA530038ED41 /* DbPerformance.hpp */,
+				D6EF7B4B102BBA530038ED41 /* DbPerformance.cpp */,
+				D657BC19106BF4CF003E7257 /* DBExperiment.h */,
+				D657BC1A106BF4CF003E7257 /* DBExperiment.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* else */,
+				D66A5B750FFEF96A006E8627 /* stateToRIB */,
+				D66C13881014EADF00F237DA /* evolverDB */,
+				D6EF7B27102BA5E40038ED41 /* dbPerformanceToRIB */,
+				D6D87240106AD4FF003E48DE /* queueDesignatorEvolves */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859E8B029090EE04C91782 /* else.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		D619E9320FEF0F4000AD1ED1 /* neat */ = {
+			isa = PBXGroup;
+			children = (
+				D619E9370FEF0F7D00AD1ED1 /* genetics.cpp */,
+				D619E9380FEF0F7D00AD1ED1 /* genetics.h */,
+				D619E9390FEF0F7D00AD1ED1 /* neat.h */,
+				D619E93A0FEF0F7D00AD1ED1 /* neatmain_ng.cpp */,
+				D619E93B0FEF0F7D00AD1ED1 /* neatmain_ng.h */,
+				D619E93C0FEF0F7D00AD1ED1 /* networks.cpp */,
+				D619E93D0FEF0F7D00AD1ED1 /* networks.h */,
+			);
+			name = neat;
+			sourceTree = "<group>";
+		};
+		D6B549411062FF0400DB16A3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				D6B549421062FF0400DB16A3 /* libjpeg.a */,
+				D6B549431062FF0400DB16A3 /* libode.a */,
+				D6B549441062FF0400DB16A3 /* libpixiecommon.a */,
+				D6B549451062FF0400DB16A3 /* libri.a */,
+				D6B549461062FF0400DB16A3 /* libsdr.a */,
+				D6B549471062FF0400DB16A3 /* libtiff.a */,
+			);
+			name = lib;
+			path = ../locomotor/lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		D6B5498C1063008200DB16A3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				D6B5498D1063008200DB16A3 /* libjpeg.a */,
+				D6B5498E1063008200DB16A3 /* libmysqlclient.a */,
+				D6B5498F1063008200DB16A3 /* libode.a */,
+				D6B549901063008200DB16A3 /* libpixiecommon.a */,
+				D6B549911063008200DB16A3 /* libri.a */,
+				D6B549921063008200DB16A3 /* libsdr.a */,
+				D6B549931063008200DB16A3 /* libtiff.a */,
+			);
+			name = lib;
+			path = ../locomotor/lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		D6BE55081018ED4A00E277C4 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				D633CD1410166D6600B99A82 /* MySqlDBEvoReporter.hpp */,
+				D633CD1510166D6600B99A82 /* MySqlDBEvoReporter.cpp */,
+				D6BE55051018ED1100E277C4 /* MySqlDB.cpp */,
+				D633CC0C101616C200B99A82 /* MySqlDB.hpp */,
+				D649B2AA1023822A00223854 /* ParamsFromDB.hpp */,
+				D649B2AB1023822A00223854 /* ParamsFromDB.cpp */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
+		D6BE55091018ED7100E277C4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D619E9240FEF0F3B00AD1ED1 /* Tardis.cpp */,
+				D619E9250FEF0F3B00AD1ED1 /* Tardis.hpp */,
+				D619E9060FEF0F3B00AD1ED1 /* All.hpp */,
+				D619E90A0FEF0F3B00AD1ED1 /* config.h */,
+				D619E90E0FEF0F3B00AD1ED1 /* Else.hpp */,
+				D619E90F0FEF0F3B00AD1ED1 /* ElseException.hpp */,
+				D619E9170FEF0F3B00AD1ED1 /* Math.hpp */,
+				D619E9220FEF0F3B00AD1ED1 /* Singleton.hpp */,
+				D619E9260FEF0F3B00AD1ED1 /* Utils.cpp */,
+				D619E9270FEF0F3B00AD1ED1 /* Utils.hpp */,
+				D633CC8810163D9200B99A82 /* FileEvoReporter.hpp */,
+				D633CC8910163D9200B99A82 /* FileEvoReporter.cpp */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		D6BE550A1018EDA000E277C4 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				D619E91D0FEF0F3B00AD1ED1 /* Renderable.hpp */,
+				D619E91E0FEF0F3B00AD1ED1 /* Renderer.hpp */,
+				D619E91F0FEF0F3B00AD1ED1 /* RibRenderer.cpp */,
+				D619E9200FEF0F3B00AD1ED1 /* RibRenderer.hpp */,
+			);
+			name = Render;
+			sourceTree = "<group>";
+		};
+		D6BE550D1018EDC100E277C4 /* Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				D647A6FA108A83F600B469F9 /* PopulationFitness.cpp */,
+				D647A6F9108A83D400B469F9 /* PopulationFitness.hpp */,
+				D619E9090FEF0F3B00AD1ED1 /* BalanceFitnessFunc.hpp */,
+				D619E90B0FEF0F3B00AD1ED1 /* ConstantFitnessFunc.hpp */,
+				D619E9140FEF0F3B00AD1ED1 /* FitnessFunc.hpp */,
+				D619E9150FEF0F3B00AD1ED1 /* FitnessFuncFactory.hpp */,
+				D619E9230FEF0F3B00AD1ED1 /* StepFitnessFunc.hpp */,
+				D619E9280FEF0F3B00AD1ED1 /* VelocityFitnessFunc.hpp */,
+				D619E9290FEF0F3B00AD1ED1 /* WalkFitnessFunc.hpp */,
+				D647A51C1087130900B469F9 /* StrategyFitnessFunc.hpp */,
+				D647A51D1087130900B469F9 /* StrategyFitnessFunc.cpp */,
+				D647A5F1108A53F800B469F9 /* FitnessFuncFactory.cpp */,
+			);
+			name = Fitness;
+			sourceTree = "<group>";
+		};
+		D6BE550E1018EDFB00E277C4 /* Physics & Body */ = {
+			isa = PBXGroup;
+			children = (
+				D6EF7B94102BCFE10038ED41 /* BodyState.cpp */,
+				D619E9160FEF0F3B00AD1ED1 /* Locatable.hpp */,
+				D619E9070FEF0F3B00AD1ED1 /* ArticulatedBody.cpp */,
+				D619E9080FEF0F3B00AD1ED1 /* ArticulatedBody.hpp */,
+				D619E91B0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp */,
+				D619E91C0FEF0F3B00AD1ED1 /* PhysicsSimulator.hpp */,
+				D619E9210FEF0F3B00AD1ED1 /* Segment.hpp */,
+			);
+			name = "Physics & Body";
+			sourceTree = "<group>";
+		};
+		D6BE550F1018EE2400E277C4 /* Main Files */ = {
+			isa = PBXGroup;
+			children = (
+				D619E9120FEF0F3B00AD1ED1 /* EvolverCmdLine.cpp */,
+				D66C13811014E93D00F237DA /* EvolverDB.cpp */,
+			);
+			name = "Main Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* else */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "else" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = else;
+			productInstallPath = "$(HOME)/bin";
+			productName = else;
+			productReference = 8DD76F6C0486A84900D96B5E /* else */;
+			productType = "com.apple.product-type.tool";
+		};
+		D66A5B620FFEF96A006E8627 /* stateToRIB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66A5B720FFEF96A006E8627 /* Build configuration list for PBXNativeTarget "stateToRIB" */;
+			buildPhases = (
+				D66A5B630FFEF96A006E8627 /* Sources */,
+				D66A5B6F0FFEF96A006E8627 /* Frameworks */,
+				D66A5B700FFEF96A006E8627 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stateToRIB;
+			productInstallPath = "$(HOME)/bin";
+			productName = else;
+			productReference = D66A5B750FFEF96A006E8627 /* stateToRIB */;
+			productType = "com.apple.product-type.tool";
+		};
+		D66C13871014EADF00F237DA /* evolverDB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66C138C1014EAFE00F237DA /* Build configuration list for PBXNativeTarget "evolverDB" */;
+			buildPhases = (
+				D66C13851014EADF00F237DA /* Sources */,
+				D66C13861014EADF00F237DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = evolverDB;
+			productName = evolverDB;
+			productReference = D66C13881014EADF00F237DA /* evolverDB */;
+			productType = "com.apple.product-type.tool";
+		};
+		D6D8723F106AD4FF003E48DE /* queueDesignatorEvolves */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6D87244106AD543003E48DE /* Build configuration list for PBXNativeTarget "queueDesignatorEvolves" */;
+			buildPhases = (
+				D6D8723D106AD4FF003E48DE /* Sources */,
+				D6D8723E106AD4FF003E48DE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = queueDesignatorEvolves;
+			productName = queueDesignatorEvolves;
+			productReference = D6D87240106AD4FF003E48DE /* queueDesignatorEvolves */;
+			productType = "com.apple.product-type.tool";
+		};
+		D6EF7B26102BA5E40038ED41 /* dbPerformanceToRIB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6EF7B2B102BA6040038ED41 /* Build configuration list for PBXNativeTarget "dbPerformanceToRIB" */;
+			buildPhases = (
+				D6EF7B24102BA5E40038ED41 /* Sources */,
+				D6EF7B25102BA5E40038ED41 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dbPerformanceToRIB;
+			productName = dbPerformanceToRIB;
+			productReference = D6EF7B27102BA5E40038ED41 /* dbPerformanceToRIB */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "else" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* else */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* else */,
+				D66A5B620FFEF96A006E8627 /* stateToRIB */,
+				D66C13871014EADF00F237DA /* evolverDB */,
+				D6EF7B26102BA5E40038ED41 /* dbPerformanceToRIB */,
+				D6DFCF3E104A9845003AA9C7 /* Batch */,
+				D6D8723F106AD4FF003E48DE /* queueDesignatorEvolves */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D619E92A0FEF0F3B00AD1ED1 /* ArticulatedBody.cpp in Sources */,
+				D619E92B0FEF0F3B00AD1ED1 /* Controller.cpp in Sources */,
+				D619E92C0FEF0F3B00AD1ED1 /* EvolverCmdLine.cpp in Sources */,
+				D619E92D0FEF0F3B00AD1ED1 /* NeatEvolver.cpp in Sources */,
+				D619E92E0FEF0F3B00AD1ED1 /* PhysicsSimulator.cpp in Sources */,
+				D619E92F0FEF0F3B00AD1ED1 /* RibRenderer.cpp in Sources */,
+				D619E9300FEF0F3B00AD1ED1 /* Tardis.cpp in Sources */,
+				D619E9310FEF0F3B00AD1ED1 /* Utils.cpp in Sources */,
+				D619E9410FEF0F7D00AD1ED1 /* networks.cpp in Sources */,
+				D619E93F0FEF0F7D00AD1ED1 /* genetics.cpp in Sources */,
+				D619E9400FEF0F7D00AD1ED1 /* neatmain_ng.cpp in Sources */,
+				D633CC8A10163D9200B99A82 /* FileEvoReporter.cpp in Sources */,
+				D6BE55301018EF7300E277C4 /* BilateralNeatController.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66A5B630FFEF96A006E8627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66A5B640FFEF96A006E8627 /* ArticulatedBody.cpp in Sources */,
+				D66A5B650FFEF96A006E8627 /* Controller.cpp in Sources */,
+				D66A5B670FFEF96A006E8627 /* NeatEvolver.cpp in Sources */,
+				D66A5B680FFEF96A006E8627 /* PhysicsSimulator.cpp in Sources */,
+				D66A5B690FFEF96A006E8627 /* RibRenderer.cpp in Sources */,
+				D66A5B6A0FFEF96A006E8627 /* Tardis.cpp in Sources */,
+				D66A5B6B0FFEF96A006E8627 /* Utils.cpp in Sources */,
+				D66A5B6C0FFEF96A006E8627 /* networks.cpp in Sources */,
+				D66A5B6D0FFEF96A006E8627 /* genetics.cpp in Sources */,
+				D66A5B6E0FFEF96A006E8627 /* neatmain_ng.cpp in Sources */,
+				D66A5B7A0FFEF9B2006E8627 /* mainStateToRIB.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66C13851014EADF00F237DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "LIBRARY_SEARCH_PATHS = /usr/local/lib/** /Library/Pixie/lib\n";
+			files = (
+				D66C981F102D811900271F6C /* BodyState.cpp in Sources */,
+				D66C138D1014EBA800F237DA /* ArticulatedBody.cpp in Sources */,
+				D66C138E1014EBA800F237DA /* Controller.cpp in Sources */,
+				D66C138F1014EBA800F237DA /* NeatEvolver.cpp in Sources */,
+				D66C13901014EBA800F237DA /* PhysicsSimulator.cpp in Sources */,
+				D66C13911014EBA800F237DA /* RibRenderer.cpp in Sources */,
+				D66C13921014EBA800F237DA /* Tardis.cpp in Sources */,
+				D66C13931014EBA800F237DA /* Utils.cpp in Sources */,
+				D66C13941014EBA800F237DA /* networks.cpp in Sources */,
+				D66C13951014EBA800F237DA /* genetics.cpp in Sources */,
+				D66C13961014EBA800F237DA /* neatmain_ng.cpp in Sources */,
+				D66C13971014EBA800F237DA /* EvolverDB.cpp in Sources */,
+				D633CD1610166D6600B99A82 /* MySqlDBEvoReporter.cpp in Sources */,
+				D6BE55061018ED1100E277C4 /* MySqlDB.cpp in Sources */,
+				D6BE552F1018EF7300E277C4 /* BilateralNeatController.cpp in Sources */,
+				D649B2AC1023822A00223854 /* ParamsFromDB.cpp in Sources */,
+				D647A51E1087130900B469F9 /* StrategyFitnessFunc.cpp in Sources */,
+				D647A5F3108A53F800B469F9 /* FitnessFuncFactory.cpp in Sources */,
+				D647A6FC108A83F600B469F9 /* PopulationFitness.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6D8723D106AD4FF003E48DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6D87245106AD623003E48DE /* MySqlDB.cpp in Sources */,
+				D6D8724B106AD65A003E48DE /* queueDesignatorEvolves.cpp in Sources */,
+				D657BC1B106BF4CF003E7257 /* DBExperiment.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6EF7B24102BA5E40038ED41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6EF7BA6102BECD10038ED41 /* MySqlDB.cpp in Sources */,
+				D6EF7BA2102BECB40038ED41 /* Tardis.cpp in Sources */,
+				D6EF7BA0102BECA50038ED41 /* ArticulatedBody.cpp in Sources */,
+				D6EF7BA3102BECB70038ED41 /* Utils.cpp in Sources */,
+				D6EF7BA4102BECBB0038ED41 /* Controller.cpp in Sources */,
+				D6EF7B9F102BECA10038ED41 /* PhysicsSimulator.cpp in Sources */,
+				D6EF7B9E102BEC9C0038ED41 /* RibRenderer.cpp in Sources */,
+				D6EF7B2F102BA66D0038ED41 /* dbPerformanceToRIB.cpp in Sources */,
+				D6EF7B4C102BBA530038ED41 /* DbPerformance.cpp in Sources */,
+				D6EF7B95102BCFE10038ED41 /* BodyState.cpp in Sources */,
+				D647A51F1087130900B469F9 /* StrategyFitnessFunc.cpp in Sources */,
+				D647A5F2108A53F800B469F9 /* FitnessFuncFactory.cpp in Sources */,
+				D647A6FB108A83F600B469F9 /* PopulationFitness.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6DFCF43104A9877003AA9C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D66C13871014EADF00F237DA /* evolverDB */;
+			targetProxy = D6DFCF42104A9877003AA9C7 /* PBXContainerItemProxy */;
+		};
+		D6DFCF45104A987D003AA9C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6EF7B26102BA5E40038ED41 /* dbPerformanceToRIB */;
+			targetProxy = D6DFCF44104A987D003AA9C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(NATIVE_ARCH)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_LINK_WITH_DYNAMIC_LIBRARIES = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/Library/Pixie/include/,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/Library/Pixie/lib,
+					"\"$(SRCROOT)/../locomotor/lib\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+					"-lode",
+					"-lri",
+				);
+				PRODUCT_NAME = else;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(NATIVE_ARCH)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_LINK_WITH_DYNAMIC_LIBRARIES = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NS_BLOCK_ASSERTIONS,
+					NDEBUG,
+				);
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/Library/Pixie/include/,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"/usr/local/lib/**",
+					/Library/Pixie/lib,
+					"\"$(SRCROOT)/../locomotor/lib\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = (
+					"-lode",
+					"-lri",
+				);
+				PRODUCT_NAME = else;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_EFFECTIVE_CPLUSPLUS_VIOLATIONS = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		D66A5B730FFEF96A006E8627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(NATIVE_ARCH)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_LINK_WITH_DYNAMIC_LIBRARIES = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/Library/Pixie/include/,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/Library/Pixie/lib,
+					"\"$(SRCROOT)/../locomotor/lib\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = (
+					"-lode",
+					"-lri",
+				);
+				PRODUCT_NAME = stateToRIB;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		D66A5B740FFEF96A006E8627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(NATIVE_ARCH)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_LINK_WITH_DYNAMIC_LIBRARIES = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/Library/Pixie/include/,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/Library/Pixie/lib,
+					"\"$(SRCROOT)/../locomotor/lib\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = (
+					"-lode",
+					"-lri",
+				);
+				PRODUCT_NAME = stateToRIB;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		D66C138A1014EAE000F237DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2.1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_OPENMP_SUPPORT = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/usr/local/mysql/include,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+					/opt/pixie/include,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/lib\"",
+					"/usr/local/lib/**",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = evolverDB;
+				SDKROOT = macosx10.5;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		D66C138B1014EAE000F237DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_OPENMP_SUPPORT = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = USE_OPENMP;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/usr/local/mysql/include,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+					/opt/pixie/include,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/lib\"",
+					"/usr/local/lib/**",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = evolverDB;
+				SDKROOT = macosx10.5;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		D6D87242106AD500003E48DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/usr/local/mysql/include,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+					/opt/pixie/include,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/lib\"",
+					"/usr/local/lib/**",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = queueDesignatorEvolves;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		D6D87243106AD500003E48DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/usr/local/mysql/include,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/usr/local/include/,
+					/opt/pixie/include,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/lib\"",
+					"/usr/local/lib/**",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = queueDesignatorEvolves;
+				SDKROOT = macosx10.5;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		D6DFCF3F104A9847003AA9C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Batch;
+			};
+			name = Debug;
+		};
+		D6DFCF40104A9847003AA9C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Batch;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		D6EF7B29102BA5E60038ED41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = _GLIBCXX_DEBUG;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/Library/Pixie/include/,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/opt/local/include/,
+					/usr/local/mysql/include/,
+					/opt/local/include/mysql5,
+					/usr/local/include/,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = dbPerformanceToRIB;
+			};
+			name = Debug;
+		};
+		D6EF7B2A102BA5E60038ED41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/src",
+					/Library/Pixie/include/,
+					/usr/include/,
+					/usr/local/ode/,
+					"/usr/local/include/gmtl-0.6.0/",
+					/opt/local/include/,
+					/usr/local/mysql/include/,
+					/opt/local/include/mysql5,
+					/usr/local/include/,
+				);
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fpermissive",
+				);
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = dbPerformanceToRIB;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "else" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "else" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D66A5B720FFEF96A006E8627 /* Build configuration list for PBXNativeTarget "stateToRIB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66A5B730FFEF96A006E8627 /* Debug */,
+				D66A5B740FFEF96A006E8627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D66C138C1014EAFE00F237DA /* Build configuration list for PBXNativeTarget "evolverDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66C138A1014EAE000F237DA /* Debug */,
+				D66C138B1014EAE000F237DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6D87244106AD543003E48DE /* Build configuration list for PBXNativeTarget "queueDesignatorEvolves" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6D87242106AD500003E48DE /* Debug */,
+				D6D87243106AD500003E48DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6DFCF41104A9865003AA9C7 /* Build configuration list for PBXAggregateTarget "Batch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6DFCF3F104A9847003AA9C7 /* Debug */,
+				D6DFCF40104A9847003AA9C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6EF7B2B102BA6040038ED41 /* Build configuration list for PBXNativeTarget "dbPerformanceToRIB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6EF7B29102BA5E60038ED41 /* Debug */,
+				D6EF7B2A102BA5E60038ED41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

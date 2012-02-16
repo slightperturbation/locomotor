@@ -1,0 +1,688 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0109 
+header_name {EvolverUI.hpp} 
+code_name {EvolverUI.cpp}
+class EvolverUI {open
+} {
+  decl {NEAT* myNeat;} {public
+  }
+  decl {Else::PhysicsSimulatorPtr mySim;} {public
+  }
+  decl {Else::EvolverPtr myEvolver;} {public
+  }
+  decl {Else::FitnessFuncPtr myFitnessFunc;} {public
+  }
+  decl {Fl_Text_Buffer* myFitnessInstructionBuffer;} {}
+  Function {EvolverUI()} {open
+  } {
+    Fl_Window myWindow {
+      label ELSE open
+      xywh {1708 569 615 535} type Double resizable visible
+    } {
+      Fl_Menu_Bar myMenuBar {open
+        private xywh {0 0 620 20} labelsize 12 align 16
+      } {
+        Submenu myFileMenu {
+          label File open
+          private xywh {0 0 100 20}
+        } {
+          MenuItem {} {
+            label {Load NEAT Parameters File...}
+            callback {const char* filename 
+	= fl_file_chooser( "Select a NEAT Configuration file.",
+			   "*.ne", NULL, 0 );
+if( !filename ) return;
+
+  myNeat->is_ready 
+	= myNeat->load_neat_params( (char*) filename );
+  updateParams();
+
+if( !( myNeat->is_ready ) )
+{
+	fl_message( "Couldn't read '%s'.", filename );
+}}
+            xywh {0 0 100 20}
+          }
+        }
+        Submenu {} {
+          label Reset open
+          xywh {0 0 100 20}
+        } {
+          MenuItem {} {
+            label {Reset Physics Simulation (Only effects current evaluation)}
+            callback {mySim->reset();}
+            xywh {0 0 100 20}
+          }
+        }
+      }
+      Fl_Tile {} {open
+        private xywh {-20 20 720 510} labeltype NO_LABEL align 0
+      } {
+        Fl_Group {} {open
+          xywh {-20 20 360 460} align 17 resizable
+        } {
+          Fl_Box mySimWindow {
+            xywh {0 20 320 440} box THIN_UP_FRAME labeltype NO_LABEL align 16 resizable
+            code0 {\#include <SimulationWindow.hpp>}
+            code1 {\#include <PhysicsSimulator.hpp>}
+            class {Else::SimulationWindow}
+          }
+          Fl_Roller myCameraElevationSlider {
+            callback {mySimWindow->setCameraElevation( myCameraElevationSlider->value() );}
+            xywh {320 20 20 440} align 0 minimum -180 maximum 180 step 1 value 30
+          }
+          Fl_Roller myCameraRotationSlider {
+            callback {mySimWindow->setCameraRotation( myCameraRotationSlider->value() );}
+            xywh {-20 460 360 20} type Horizontal align 0 minimum -180 maximum 180 step 1
+          }
+        }
+        Fl_Pack {} {open
+          private xywh {340 20 270 510} type HORIZONTAL box THIN_UP_FRAME
+        } {
+          Fl_Tabs {} {open
+            private xywh {340 20 270 510}
+          } {
+            Fl_Group myNeatParamsGroup {
+              label Evolution open
+              private xywh {340 40 270 490} labelsize 12 when 0
+            } {
+              Fl_Scroll {} {open
+                private xywh {340 40 270 490} type VERTICAL align 16 when 0 resizable
+              } {
+                Fl_Group {} {open
+                  private xywh {340 40 270 490} labelsize 12
+                } {
+                  Fl_Group {} {
+                    label General open
+                    xywh {350 60 230 120} box PLASTIC_DOWN_BOX align 5
+                  } {
+                    Fl_Value_Input myNumRuns {
+                      label {Number of Runs:}
+                      callback {NEAT::num_runs = myNumRuns->value();}
+                      tooltip {Sets the upper-bound on the number of generations to evaluate} xywh {510 70 60 20} labelsize 12 value 1 textsize 12
+                    }
+                    Fl_Value_Input myGenLimit {
+                      label {Generations:}
+                      tooltip {Sets the upper-bound on the number of generations to evaluate} xywh {510 90 60 20} labelsize 12 value 200 textsize 12
+                    }
+                    Fl_Value_Input myPopSize {
+                      label {Population Size:}
+                      callback {NEAT::pop_size = myPopSize->value();}
+                      tooltip {The number of organisms in a population. Must be divisible by 4 for Echo State Nets} xywh {510 110 60 20} labelsize 12 value 80 textsize 12
+                    }
+                    Fl_Value_Input myStepCount {
+                      label {Max Time Steps per Eval:}
+                      tooltip {The number of organisms in a population.} xywh {510 130 60 20} labelsize 12 maximum 1e+07 step 1 value 10000 textsize 12 deactivate resizable
+                    }
+                    Fl_Value_Input myRandSeed {
+                      label {Random Seed:}
+                      callback {srand( myRandSeed->value() );}
+                      xywh {510 150 60 20} labelsize 12 textsize 12
+                      code0 {\#include <cstdlib>}
+                      code1 {\#include <ctime>}
+                    }
+                  }
+                  Fl_Button {} {
+                    label {Set Initial Genotype File...}
+                    callback {const char* filename 
+	= fl_file_chooser( "Select an Initial Genome file.",
+			   "*.genome", NULL, 0 );
+if( !filename ) 
+{
+	myRunStraightSim->deactivate();
+	return;
+}
+
+myEvolver->createStartingGenome( mySim->getBody(), filename );
+myGenotypeFilename->value( filename );
+myRunStraightSim->activate();}
+                    xywh {425 395 150 20} labelsize 12
+                  }
+                  Fl_Output myGenotypeFilename {
+                    label {Initial Genotype Filename:}
+                    xywh {360 370 210 20} color 47 labelsize 12 align 5 textsize 12
+                  }
+                  Fl_Group {} {
+                    label {Fitness Progress} open
+                    xywh {350 460 230 60} box PLASTIC_DOWN_BOX labelsize 12 align 5
+                  } {
+                    Fl_Box myFitnessGraph {
+                      xywh {350 460 230 60} box PLASTIC_UP_FRAME
+                      code0 {\#include <FitnessGraph.hpp>}
+                      class {Else::FitnessGraph}
+                    }
+                  }
+                  Fl_Button myRunStraightSim {
+                    label {Run Sim with Genotype}
+                    callback {using namespace Else;
+
+if( !myFitnessFunc )
+{
+	FitnessFuncFactory lclFFFactory;
+	myFitnessFunc = FitnessFuncPtr( lclFFFactory.make( "Walk" ) );
+}
+	
+bool hasHarness = mySingleRunHasHarness->value();
+myEvolver->runIndividualGenome( myFitnessFunc, mySim, hasHarness );}
+                    xywh {425 420 150 20} labelsize 12 deactivate
+                    code0 {\#include <FitnessFuncFactory.hpp>}
+                  }
+                  Fl_Choice myControllerChoice {
+                    label {Controller Type:}
+                    callback {if( !myEvolver->isRunning() )
+{
+  Else::EvolverFactory lclFactory;
+  const Fl_Menu_Item* sel = myControllerChoice->mvalue();
+
+  myEvolver
+    = lclFactory.make( (const char*) sel->user_data(), myNeat );
+
+  std::cout << "Changing to evolver: " << (const char*) sel->user_data() << "\\n";
+}
+else
+{
+  std::cerr << "Attempt to change Evolver while running ignored.\\n";
+}} open
+                    xywh {440 185 140 20} down_box BORDER_BOX labelsize 12 textsize 12
+                    code0 {\#include <EvolverFactory.hpp>}
+                  } {
+                    MenuItem {} {
+                      label NEAT
+                      user_data {"NEAT"} user_data_type {const char*}
+                      tooltip {Neuro-Evolution of Augmented Topologies} xywh {0 0 100 20} labelsize 12
+                    }
+                    MenuItem {} {
+                      label {Echo State Network}
+                      user_data {"CLUMP"} user_data_type {const char*}
+                      xywh {0 0 100 20}
+                    }
+                  }
+                  Fl_Light_Button mySingleRunHasHarness {
+                    label {w/o Harness}
+                    xywh {350 420 72 20} labelsize 10
+                  }
+                  Fl_Tabs {} {open
+                    xywh {350 210 250 140}
+                  } {
+                    Fl_Group {} {
+                      label NEAT open
+                      xywh {350 230 250 120} box PLASTIC_DOWN_BOX
+                    } {
+                      Fl_Value_Input myDropOffAge {
+                        label {Species Drop-off Age:}
+                        callback {NEAT::dropoff_age = myDropOffAge->value();}
+                        tooltip {Age of species where they begin to be penalized for just being old.} xywh {530 240 60 20} labelsize 12 value 10 textsize 12
+                      }
+                      Fl_Value_Input myMutationWeight {
+                        label {Link-weight Mutation:}
+                        callback {NEAT::weight_mut_power = myMutationWeight->value();}
+                        tooltip {The strength of link-weight mutations.} xywh {530 266 60 20} labelsize 12 value 10 textsize 12 resizable
+                      }
+                      Fl_Value_Input mySpeciesTarget {
+                        label {Target Species Count:}
+                        callback {NEAT::num_species_target = mySpeciesTarget->value();}
+                        tooltip {The species threshold will change to maintain this \# of species} xywh {530 293 60 20} labelsize 12 value 20 textsize 12
+                      }
+                      Fl_Value_Input myLinkWeightMutationProb {
+                        label {Prob of Link Wt Mutatation:}
+                        callback {NEAT::mutate_link_weights_prob = myLinkWeightMutationProb->value();}
+                        tooltip {The chance of non-structurally changed mutations will modify link weight.} xywh {530 320 60 20} labelsize 12 step 0.01 value 0.1 textsize 12
+                      }
+                    }
+                    Fl_Group {} {
+                      label ESN open
+                      xywh {370 230 230 120} hide
+                    } {}
+                  }
+                }
+              }
+            }
+            Fl_Group myPhysicsGroup {
+              label Physics open
+              xywh {340 40 270 490} labelsize 12 hide
+            } {
+              Fl_Value_Input myGravity {
+                label {Gravity:}
+                xywh {360 60 230 20} labelsize 12 align 5 minimum -20 maximum 20 value -9.8 textsize 12
+              }
+              Fl_Value_Input myCFM {
+                label {Constraint Force Mixing (CFM):}
+                tooltip {Zero is for normal, hard constraints.  Softness goes up with CFM} xywh {360 100 230 20} labelsize 12 align 5 maximum 2 textsize 12
+              }
+              Fl_Value_Input myERP {
+                label {Error Reduction Parameter (ERP):}
+                tooltip {Fraction of the error in joints to be fixed per time step.  Defaults to 0.2} xywh {360 140 230 20} labelsize 12 align 5 value 0.2 textsize 12
+              }
+              Fl_Check_Button myFastStepToggle {
+                label {Use Fast (Inaccurate) Step}
+                xywh {360 240 230 20} down_box DOWN_BOX value 1 labelsize 12
+              }
+              Fl_Button {} {
+                label {Apply Physics Settings}
+                callback {mySim->setGravity( myGravity->value() );
+mySim->setCFM( myCFM->value() );
+mySim->setERP( myERP->value() );
+mySim->setUseFastStep( myFastStepToggle->value() == 1 );
+mySim->setTimeStep( myTimeStep->value() );
+mySim->setFastSubSteps( myFastSubSteps->value() );
+mySim->setCollisionERP( myCollisionERP->value() );
+mySim->setCollisionCFM( myCollisionCFM->value() );}
+                xywh {450 350 140 30} labelsize 12
+              }
+              Fl_Value_Input myTimeStep {
+                label {Time Step}
+                xywh {360 180 230 20} labelsize 12 align 5 value 0.0025 textsize 12
+              }
+              Fl_Value_Input myDisplayRate {
+                label {Display Rate:}
+                callback {myEvolver->setDisplayRate( (myDisplayRate->value()) );}
+                xywh {360 410 230 20} labelsize 12 align 5 maximum 10000 step 1 value 1 textsize 12
+              }
+              Fl_Value_Input myUpdateRate {
+                label {Controller Evaluation Rate (per Physics):}
+                callback {myEvolver->setUpdateRate( (myUpdateRate->value()) );}
+                xywh {360 450 230 20} labelsize 12 align 5 maximum 10000 step 1 value 5 textsize 12
+              }
+              Fl_Value_Input myFastSubSteps {
+                label {Fast Time Sub-Steps}
+                xywh {360 220 230 20} labelsize 12 align 5 minimum 1 maximum 500 step 1 value 25 textsize 12
+              }
+              Fl_Check_Button myInternalCollisions {
+                label {Check for Intra-body Collisions}
+                callback {mySim->setAllowInternalCollisions( myInternalCollisions->value() == 1 );}
+                xywh {360 480 230 20} down_box DOWN_BOX labelsize 12
+              }
+              Fl_Value_Input myCollisionERP {
+                label {Collision ERP:}
+                xywh {360 280 230 20} labelsize 12 align 5 step 0.1 value 0.8 textsize 12
+              }
+              Fl_Value_Input myCollisionCFM {
+                label {Collision CFM:}
+                xywh {360 320 230 20} labelsize 12 align 5 step 1e-07 value 0.0001 textsize 12
+              }
+            }
+            Fl_Group myFitnessFunctionGroup {
+              label Fitness open
+              xywh {340 40 270 480} labelsize 12 hide
+            } {
+              Fl_Choice myFitnessFuncChoice {
+                label {Base Fitness Function:} open
+                xywh {370 65 220 20} down_box BORDER_BOX labelsize 12 align 5 textsize 12
+                code0 {\#include <FitnessFuncFactory.hpp>}
+              } {
+                MenuItem {} {
+                  label Walk
+                  callback {Else::FitnessFuncFactory lclFFFactory;
+
+const char* name = "Walk";
+myFitnessFunc
+	= lclFFFactory.make( name );
+std::cout << "Changing to fitness: " 
+	  << name << "\\n";}
+                  xywh {10 10 100 20}
+                }
+                MenuItem {} {
+                  label Balance
+                  callback {Else::FitnessFuncFactory lclFFFactory;
+
+const char* name = "Balance";
+myFitnessFunc
+	= lclFFFactory.make( name );
+std::cout << "Changing to fitness: " 
+	  << name << "\\n";}
+                  xywh {10 10 100 20}
+                }
+                MenuItem {} {
+                  label Constant
+                  callback {Else::FitnessFuncFactory lclFFFactory;
+
+const char* name = "Constant";
+myFitnessFunc
+	= lclFFFactory.make( name );
+std::cout << "Changing to fitness: " 
+	  << name << "\\n";}
+                  xywh {10 10 100 20}
+                }
+                MenuItem {} {
+                  label Velocity
+                  callback {Else::FitnessFuncFactory lclFFFactory;
+
+const char* name = "Velocity";
+myFitnessFunc
+	= lclFFFactory.make( name );
+std::cout << "Changing to fitness: " 
+	  << name << "\\n";}
+                  xywh {0 0 100 20}
+                }
+              }
+              Fl_Button {} {
+                label {Apply Fitness Function (Force Reset)}
+                callback {using namespace Else;
+myFitnessFunc = myFitnessFunc;
+updateParams();}
+                xywh {430 100 160 40} labelsize 12 align 128
+              }
+              Fl_Value_Input myFitnessParamValue {
+                label {Parameter Value:}
+                xywh {470 190 120 20} labelsize 12 textsize 12
+              }
+              Fl_Input myFitnessParamName {
+                label {Parameter Name:}
+                xywh {470 160 120 20} labelsize 12 textsize 12
+              }
+              Fl_Button {} {
+                label {Apply Fitness Parameter}
+                callback {myFitnessFunc->setDoubleParam( myFitnessParamName->value(), myFitnessParamValue->value() );}
+                xywh {430 220 160 30} labelsize 12
+              }
+              Fl_Text_Display myFitnessInstructions {
+                xywh {370 260 220 150} labelsize 12 textsize 10
+                code0 {\#include <FL/Fl_Text_Display.H>}
+                code1 {\#include <FL/Fl_Text_Buffer.H>}
+              }
+            }
+            Fl_Group myBodyParamsGroup {
+              label Body open
+              xywh {340 40 270 480} labelsize 12 hide
+            } {
+              Fl_Value_Input myBodyHeight {
+                label {Height (m):}
+                tooltip {Sets the height of the body to generate (in meters).} xywh {500 60 90 20} labelsize 12 value 1.75 textsize 12
+              }
+              Fl_Value_Input myBodyWeight {
+                label {Weight Factor (kg/kg):}
+                tooltip {Ratio of kilograms to simiulated kilograms.} xywh {500 88 90 20} labelsize 12 value 1 textsize 12
+              }
+              Fl_Button {} {
+                label {Create New Body (Sim not Running!)}
+                callback {using namespace Else;
+
+ArticulatedBody* b = 
+	new ArticulatedBody( mySim->getWorldID(),
+			     mySim->getSpaceID(),
+			     myBodyHeight->value(), 
+			     myBodyWeight->value() );
+
+mySim->setBody( b );}
+                tooltip {Will only have an effect on the next evolutionary run.} xywh {480 110 110 50} labelsize 12 align 128
+              }
+              Fl_Value_Slider myOverrideActuator1 {
+                callback {if( myOverrideActuator1IsOn->value() == 1 )
+{
+	mySim->getBody()->manuallyOverrideActuator( myOverrideActuator1ID->value(), 
+		myOverrideActuator1->value() );
+}}
+                xywh {380 210 190 20} type {Horz Knob} labelsize 12 align 5
+              }
+              Fl_Value_Input myOverrideActuator1ID {
+                label {Actuator \#:}
+                callback {if( myOverrideActuator1IsOn->value() == 1 )
+{
+	mySim->getBody()->manuallyOverrideActuator( myOverrideActuator1ID->value(), 
+		myOverrideActuator1->value() );
+} else
+{
+	mySim->getBody()->manuallyOverrideActuator( -1, 
+		myOverrideActuator1->value() );
+}}
+                tooltip {-1 To have no effect.} xywh {570 210 30 20} labelsize 12 align 9 minimum -1 maximum 12 step 1 value -1 textsize 12
+              }
+              Fl_Check_Button myOverrideActuator1IsOn {
+                label {Manually Override Actuator}
+                callback {if( myOverrideActuator1IsOn->value() == 1 )
+{
+	if( myOverrideActuator1ID->value() == -1 )
+		myOverrideActuator1ID->value( 0 );
+	mySim->getBody()->manuallyOverrideActuator( myOverrideActuator1ID->value(), 
+		myOverrideActuator1->value() );
+} else
+{
+	mySim->getBody()->manuallyOverrideActuator( -1, 
+		myOverrideActuator1->value() );
+}}
+                xywh {360 210 20 20} down_box DOWN_BOX labelsize 12 align 5
+              }
+              Fl_Value_Input myForceScale {
+                label {Force Scale:}
+                callback {mySim->getBody()->setForceScale( myForceScale->value() );}
+                xywh {510 250 80 20} labelsize 12 maximum 100000 value 10000 textsize 12
+              }
+              Fl_Light_Button myHasController {
+                label {Engage Controller}
+                callback {mySim->getBody()->setHasController( myHasController->value() == 1 );}
+                xywh {470 290 120 30} value 1 labelsize 12
+              }
+              Fl_Group {} {open
+                xywh {350 410 260 110}
+              } {
+                Fl_Progress myLeftActuatorOutput1 {
+                  xywh {360 440 110 20} box PLASTIC_THIN_UP_BOX selection_color 29 labelsize 10 align 17 when 1
+                }
+                Fl_Progress myLeftActuatorOutput2 {
+                  xywh {360 470 110 20} box PLASTIC_THIN_UP_BOX selection_color 29 labelsize 10
+                }
+                Fl_Progress myLeftActuatorOutput3 {
+                  xywh {360 500 110 20} box PLASTIC_THIN_UP_BOX selection_color 29 labelsize 10
+                }
+                Fl_Progress myRightActuatorOutput1 {
+                  xywh {490 440 110 20} box PLASTIC_THIN_UP_BOX selection_color 29 labelsize 10
+                }
+                Fl_Progress myRightActuatorOutput2 {
+                  xywh {490 470 110 20} box PLASTIC_THIN_UP_BOX selection_color 29 labelsize 10
+                }
+                Fl_Progress myRightActuatorOutput3 {
+                  xywh {490 500 110 20} box PLASTIC_THIN_UP_BOX selection_color 29 labelsize 10
+                }
+                Fl_Text_Display {} {
+                  label {Right (Knee, HipX, HipZ)}
+                  xywh {500 430 90 0} labelsize 10 textsize 12
+                }
+                Fl_Text_Display {} {
+                  label {Left (Knee, HipX, HipZ)}
+                  xywh {370 430 90 0} labelsize 10 textsize 12
+                }
+              }
+            }
+            Fl_Group Images {
+              label Images open
+              xywh {340 40 270 490} labelsize 12 hide
+            } {
+              Fl_Group {} {
+                label {Animation Recording} open
+                xywh {350 80 250 165} box PLASTIC_THIN_DOWN_BOX align 5
+              } {
+                Fl_Light_Button myAnimSaving {
+                  label {Save Animation to Disk}
+                  callback {if( myAnimSaving->value() == 1 )
+{
+  mySimWindow->saveAnim( myAnimName->value(), myCameraAngleChoice->value(), myPreviewToggle->value()  );
+} else
+{
+  mySimWindow->stopAnim();
+}}
+                  xywh {440 205 150 30} labelsize 12
+                }
+                Fl_Input myAnimName {
+                  label {Prefix for animation files:}
+                  xywh {370 100 220 20} labelsize 12 align 5 textsize 12
+                }
+                Fl_Check_Button myPreviewToggle {
+                  label Preview
+                  xywh {445 125 64 15} down_box DOWN_BOX labelsize 12
+                }
+                Fl_Choice myCameraAngleChoice {
+                  label {Camera Angle:} open
+                  xywh {445 160 145 20} down_box BORDER_BOX labelsize 12 align 5 textsize 12
+                } {
+                  MenuItem {} {
+                    label {Side-view}
+                    xywh {0 0 30 20}
+                  }
+                  MenuItem {} {
+                    label {Three-quarters walker}
+                    xywh {0 0 30 20}
+                  }
+                  MenuItem {} {
+                    label Dramatic
+                    xywh {10 10 30 20}
+                  }
+                  MenuItem {} {
+                    label {Original ELSE}
+                    xywh {5 5 30 20}
+                  }
+                }
+              }
+              Fl_Group {} {
+                label {Screen Shots} open
+                xywh {350 420 250 90} box PLASTIC_THIN_DOWN_BOX align 5
+              } {
+                Fl_Input myStillName {
+                  label {Prefix for still image file:}
+                  xywh {370 440 220 20} labelsize 12 align 5 textsize 12
+                }
+                Fl_Button {} {
+                  label {Take Screenshot}
+                  callback {saveScreenImage( myStillName->value(), mySimWindow->w(), mySimWindow->h() );}
+                  xywh {480 470 110 30} labelsize 12
+                  code0 {\#include <GLTools.h>}
+                }
+              }
+            }
+          }
+        }
+        Fl_Group {} {open
+          xywh {0 480 340 50} box THIN_UP_FRAME align 22
+        } {
+          Fl_Light_Button myShowSim {
+            label {Show Simulation}
+            callback {mySimWindow->enable( 1 == myShowSim->value() );}
+            xywh {10 490 150 30} value 1 align 144 when 1
+          }
+          Fl_Return_Button {} {
+            label {Start Evolution}
+            callback {using namespace Else;
+
+if( !(myNeat->is_ready) )
+{
+  const char* filename 
+	= fl_file_chooser( "Select a NEAT Configuration file.",
+			   "*.ne", NULL, 0 );
+  myNeat->is_ready 
+	= myNeat->load_neat_params( (char*) filename );
+}
+
+// Second Try
+if( myNeat->is_ready )
+{
+  if( myEvolver->isRunning() ) 
+  {
+    myEvolver->toggleRunning();
+  } else {
+    myEvolver->go( myNeat->pop_size, myGenLimit->value(), myFitnessFunc, mySim, myGenotypeFilename->value(), mySingleRunHasHarness->value()  );
+  }
+} else {
+  fl_message( "Can't start NEAT evoluation without initializing NEAT params." );
+}}
+            xywh {170 490 160 30} align 128
+            code0 {\#include <Evolver.hpp>}
+            code1 {\#include <FL/Fl_File_Chooser.H>}
+            code2 {\#include <FL/fl_ask.H>}
+            code3 {\#include <NeatEvolver.hpp>}
+          }
+        }
+      }
+    }
+    code {// Setup the Initial State
+using namespace Else;
+	myForceScale->value( DEFAULT_FORCE_SCALE );
+	myTimeStep->value( DEFAULT_TIME_STEP );
+	myFastSubSteps->value( DEFAULT_TIME_SUBSTEPS );
+	mySim = PhysicsSimulatorPtr( new PhysicsSimulator() );
+	ArticulatedBody* lclBody 
+		= new ArticulatedBody( mySim->getWorldID(), mySim->getSpaceID() );
+	mySim->setBody( lclBody );
+	mySimWindow->setSim( mySim );
+	int currTime = time( NULL );
+	myRandSeed->value( currTime );
+	srand( currTime );
+
+	myNeat = new NEAT();
+	std::string filename( "data/default.ne" );
+	std::ifstream testFile( filename.c_str() );
+	if( testFile ) {
+		myNeat->load_neat_params( filename.c_str() );
+	}
+
+	FitnessFuncFactory lclFFFactory;
+	myFitnessFunc = FitnessFuncPtr( lclFFFactory.make( "Walk" ) );
+	myEvolver = EvolverPtr( new NeatEvolver( myNeat ) );
+	myFitnessGraph->setFitness( myFitnessFunc );
+	myFitnessGraph->setTotalGenerations( myGenLimit->value() );
+	updateParams();
+
+myFitnessInstructionBuffer = new Fl_Text_Buffer();
+myFitnessInstructions->buffer( myFitnessInstructionBuffer );
+myFitnessInstructionBuffer->text(
+"Height\\t\\tSets the minimum allowed height in meters\\n" \\
+"TimeValue\\t\\tThe fitness value for just still being around.  Defaults to 0.1\\n" \\
+"HarnessHeight\\t\\tSets the minimum height before harness kicks in." );
+
+myLeftActuatorOutput1->minimum( -1 );
+myLeftActuatorOutput1->maximum(  1 );
+myLeftActuatorOutput2->minimum( -1 );
+myLeftActuatorOutput2->maximum(  1 );
+myLeftActuatorOutput3->minimum( -1 );
+myLeftActuatorOutput3->maximum(  1 );
+
+myRightActuatorOutput1->minimum( -1 );
+myRightActuatorOutput1->maximum(  1 );
+myRightActuatorOutput2->minimum( -1 );
+myRightActuatorOutput2->maximum(  1 );
+myRightActuatorOutput3->minimum( -1 );
+myRightActuatorOutput3->maximum(  1 );} {}
+  }
+  Function {show( int argc, char* argv[] )} {open
+  } {
+    code {myWindow->show();} {}
+  }
+  Function {updateParams()} {open return_type void
+  } {
+    code {// Sync display to main program
+myNumRuns->value( myNeat->num_runs );
+myPopSize->value( myNeat->pop_size );
+myDropOffAge->value( myNeat->dropoff_age );
+mySpeciesTarget->value( myNeat->num_species_target );
+myLinkWeightMutationProb->value( myNeat->mutate_link_weights_prob );
+myMutationWeight->value( myNeat->weight_mut_power );
+myUpdateRate->value( myEvolver->getUpdateRate() );
+myDisplayRate->value( myEvolver->getDisplayRate() );
+myTimeStep->value( mySim->getTimeStep() );
+myFastSubSteps->value( mySim->getFastSubSteps() );
+myFastStepToggle->value( mySim->getUseFastStep() ? 1 : 0 );
+myInternalCollisions->value( mySim->getAllowInternalCollisions() ? 1 : 0 );
+myCFM->value( mySim->getCFM() );
+myERP->value( mySim->getERP() );
+myGravity->value( mySim->getGravity() );
+myCollisionCFM->value( mySim->getCollisionCFM() );
+myCollisionERP->value( mySim->getCollisionERP() );} {}
+  }
+  Function {showActuators( const std::vector<double>& argActuators )} {open return_type void
+  } {
+    code {assert( argActuators.size() >= 6 );
+
+setActuator( myRightActuatorOutput1, argActuators[0], 0 );
+setActuator( myRightActuatorOutput2, argActuators[1], 1 );
+setActuator( myRightActuatorOutput3, argActuators[2], 2 );
+
+setActuator( myLeftActuatorOutput1, argActuators[3], 3 );
+setActuator( myLeftActuatorOutput2, argActuators[4], 4 );
+setActuator( myLeftActuatorOutput3, argActuators[5], 5 );} {}
+  }
+  Function {setActuator( Fl_Progress* argProg, double argValue, int argId )} {open
+  } {
+    code {sprintf( myActuatorLabel[argId], "%1.3f\\0", argValue );
+argProg->label( myActuatorLabel[argId] );
+argProg->value( argValue );} {}
+  }
+  decl {char myActuatorLabel[255][255];} {}
+} 

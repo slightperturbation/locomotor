@@ -1,0 +1,96 @@
+
+
+The evolver (AKA else) program runs in a directory containing:
+	default.ne   -- the neuroevolution parameters
+	default.body -- the morphology of the character
+	data         -- a directory to store data files from the run
+
+The names of these files (except the data dir) can be changed with runtime flags.
+
+Server processes are generally started using the startEvolverDBServers.sh script in the else/bin directory.  The script is preferred because it uses nohup to allow running after the terminal is closed.
+
+The DB server must be available for the server, since processing requests are polled from the DB.  This DB is hard-coded as "evocomp.org", username "vector", database as "evocomp".  The startEvolverDBServers.sh automatically establishes an ssh-tunnel for communication with the DB.  The command used is 
+
+	ssh -f -n -L 3999:localhost:3306 evocomp.org sleep 10
+
+which can be run manually if needed.
+
+Once the process is underway, .state files can be gathered from the State table in the database, or viewed using the application.
+
+
+To render the .state files, use the script/renderState.sh.  This script will create a h264 mov(ie) for each .state file in the current directory.  Note that it may take a while to render, since high-quality GI is used.
+
+For direct access to the database, use Sequel Pro: http://www.sequelpro.com/
+First setup a tunnel (just like the server tunnel):
+	
+	$ ssh -L 3999:localhost:3306 evocomp.org
+
+Then connect in Sequel Pro using a SSH connection, with fields:
+MySQL Host: evocomp.org
+Username: vector
+Password: sm4ck3r
+Database: evocomp
+Port: 3306
+
+SSH Host: 127.0.0.1
+SSH User: vector
+SSH Password:  <leave blank, use public-key auth>
+SSH Port: 22
+
+
+--- ODE Dependency ---
+A custom build of ODE is required.  This custom version adds the planarYZ joint used as a harness.
+
+to build:
+
+cd ~/src/ode-0.11.1
+./configure --enable-double-precision --disable-demos --enable-static --with-drawstuff=OSX
+
+to get x86-64 binaries, use:
+
+valis:ode-0.11.1 vector$ ./configure --enable-release --disable-tests --disable-demos --enable-double-precision --enable-static --build x86_64-apple-darwin10.0.0 --with-drawstuff=OSX
+
+--- zlib Dependency ---
+From
+http://www.zlib.net/
+get the latest source
+http://www.zlib.net/zlib-1.2.3.tar.gz
+
+env CFLAGS="-arch x86_64" CPPFLAGS="-arch x86_64" LDFLAGS="-arch x86_64" ./configure --prefix=/usr
+
+make 
+sudo make install
+
+--- libTiff Dependency ---
+get source bundle tiff-3.8.2.zip from
+http://dl.maptools.org/dl/libtiff/
+
+./configure --disable-shared --enable-static --build x86_64-apple-darwin10.0.0
+
+** ZLIB DEP FAILS **
+make 
+sudo make install
+
+
+--- Pixie Dependency ---
+Download the 2.6.2 source.
+ 
+./configure --enable-static --disable-shared --build x86_64-apple-darwin10.0.0
+
+
+
+--- Deployment ---
+
+scp /Users/vector/src/else/build/Release/evolverDB wand.cs.ucla.edu:/Users/vector/bin/
+
+
+--- Compiling with OpenMP ---
+- On Mac/XCode 3.1
+  1) Toggle the "use openmp" flag.
+  2) Change the compilier to LLVM 4.2
+  3) In debug config, remove the _GLIBCXX_DEBUG flag
+
+
+-- Getting Xcode project files from .pro --
+$ qmake -spec macx-xcode evolverDB.pro
+
