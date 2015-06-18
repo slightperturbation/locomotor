@@ -28,7 +28,6 @@ First setup a tunnel (just like the server tunnel):
 Then connect in Sequel Pro using a SSH connection, with fields:
 MySQL Host: evocomp.org
 Username: vector
-Password: sm4ck3r
 Database: evocomp
 Port: 3306
 
